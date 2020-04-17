@@ -28,7 +28,8 @@ fi
 
 # We need this on Ubuntu to make sure that the packages are found when
 # attempting to execute the tests.
-export PYTHONPATH=$PYTHONPATH:$(pwd)
+export PYTHONPATH=$PYTHONPATH:$(pwd):/root/home/modin/
+export MODIN_ENGINE=cloudburst
 
 python3 cloudburst/server/scheduler/server.py conf/cloudburst-local.yml &
 SPID=$!
